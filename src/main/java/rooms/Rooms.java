@@ -1,51 +1,59 @@
 package rooms;
 
+import behaviours.IBadGuy;
+import behaviours.IPlayer;
 import items.Loot;
 
 import java.util.ArrayList;
 
 public class Rooms {
 
-    private Loot loot;
-//    private BadGuys badGuys;
-    private boolean status;
+    private ArrayList<Loot> loot;
+    private ArrayList<IBadGuy> badGuys;
+    private IPlayer player;
+//    private boolean status;
 
     public Rooms()
     {
-        this.loot = null;
-//        this.badGuys = null;
-        this.status  = false;
+        this.loot = new ArrayList<>();
+        this.badGuys = new ArrayList<>();
+        this.player = null;
+//        this.status  = false;
     }
 
-    public Loot getLoot()
+    public void addPlayerToRoom(IPlayer player){
+        this.player = player;
+    }
+
+    public ArrayList getLoot()
     {
         return this.loot;
     }
 
-//    public ArrayList getBadguys()
+    public ArrayList getBadGuys()
+    {
+        return badGuys;
+    }
+
+//    public boolean getStatus()
 //    {
-//        return BadGuys;
+//        return this.status;
+//    }
+//
+//    public void setStatus(boolean status)
+//    {
+//        this.status = status;
 //    }
 
-    public boolean getStatus()
+    public void addLoot(Loot loot)
     {
-        return this.status;
+        this.loot.add(loot);
     }
 
-    public void setStatus(boolean status)
+    public void setBadGuys(IBadGuy badGuy)
     {
-        this.status = status;
+        this.badGuys.add(badGuy);
     }
-
-    public void setLoot(Loot loot)
-    {
-        this.loot = loot;
-    }
-
-//    public void setBadGuys(BadGuys badguys)
-//    {
-//        this.badGuys = badguys;
-//    }
 
 
 

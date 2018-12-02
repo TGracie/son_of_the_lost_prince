@@ -1,9 +1,10 @@
 package characters.baddudes;
 
+import behaviours.IBadGuy;
 import characters.Avatar;
 import items.WeaponType;
 
-public class GiantDwarf extends Avatar {
+public class GiantDwarf extends Avatar implements IBadGuy {
 
     private WeaponType weapon;
 
@@ -11,6 +12,7 @@ public class GiantDwarf extends Avatar {
         super(name);
         this.weapon = weapon;
         setStats();
+        setStatus();
     }
 
     protected void setStats(){
@@ -18,6 +20,10 @@ public class GiantDwarf extends Avatar {
         this.hp += 100;
         this.attack += 3;
         this.defence -= 5;
+    }
+
+    public void setStatus(){
+        this.badGuy = true;
     }
 
     public WeaponType getWeapon() {

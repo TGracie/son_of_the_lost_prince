@@ -11,6 +11,7 @@ public class MsWhitby extends Avatar {
         super(name);
         this.weapon = weapon;
         setStats();
+        setStatus();
     }
 
     protected void setStats(){
@@ -18,6 +19,10 @@ public class MsWhitby extends Avatar {
         this.hp -= 50;
         this.attack += 10;
         this.defence += 10;
+    }
+
+    public void setStatus(){
+        this.badGuy = true;
     }
 
     public WeaponType getWeapon() {

@@ -9,12 +9,14 @@ public abstract class Avatar {
     protected int hp;
     protected int attack;
     protected int defence;
+    protected boolean badGuy;
 
     public Avatar(String name){
         this.name = name;
         this.hp = 100;
         this.attack = 10;
         this.defence = 10;
+        this.badGuy = false;
     }
 
     public String getName(){

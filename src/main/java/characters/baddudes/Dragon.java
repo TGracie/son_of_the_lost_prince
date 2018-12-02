@@ -1,10 +1,11 @@
 package characters.baddudes;
 
+import behaviours.IBadGuy;
 import characters.Avatar;
 import items.SpellType;
 import items.WeaponType;
 
-public class Dragon extends Avatar {
+public class Dragon extends Avatar implements IBadGuy {
     private SpellType spell;
     private WeaponType weapon;
 
@@ -13,6 +14,7 @@ public class Dragon extends Avatar {
         this.weapon = weapon;
         this.spell = spell;
         setStats();
+        setStatus();
     }
 
     protected void setStats(){
@@ -20,6 +22,10 @@ public class Dragon extends Avatar {
         this.hp -= 90;
         this.attack -= 5;
         this.defence -= 8;
+    }
+
+    public void setStatus(){
+        this.badGuy = true;
     }
 
     public SpellType getSpell() {
