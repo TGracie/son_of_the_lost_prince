@@ -1,9 +1,10 @@
 package characters.totallyniceguys;
 
+import behaviours.IPlayer;
 import characters.Avatar;
 import items.WeaponType;
 
-public class Knight extends Avatar {
+public class Knight extends Avatar implements IPlayer {
     private WeaponType weapon;
     public Knight(String name, WeaponType weapon) {
         super(name);
@@ -23,5 +24,12 @@ public class Knight extends Avatar {
 
     public void setWeapon(WeaponType weapon) {
         this.weapon = weapon;
+    }
+
+    public int getAttackStrength() {
+        int strength = 0;
+        strength += this.weapon.getValue();
+        strength += this.attack;
+        return strength;
     }
 }
